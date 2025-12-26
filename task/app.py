@@ -47,7 +47,7 @@ async def start(stream: bool) -> None:
     # 7. If `stream` param is true -> call DialClient#stream_completion()
     #    else -> call DialClient#get_completion()
         if (stream):
-            ai_response = await dial_client.stream_completion(conversation.get_messages)
+            ai_response = await dial_client.stream_completion(conversation.get_messages())
         else:
             ai_response = dial_client.get_completion(conversation.get_messages())    
 
